@@ -1,0 +1,28 @@
+﻿@model Weapons
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Gun_Id</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Ranking</th>
+        <th>Damage</th>
+        <th>Time_To_Kill</th>
+        <th>Best_Distance</th>
+    </tr>
+    <tr>
+        <td>@Model.Gun_Id</td>
+        <td>@Model.Name</td>
+        <td>@Model.Category</td>
+        <td>@Model.Ranking</td>
+        <td>@Model.Damage</td>
+        <td>@Model.Time_To_Kill</td>
+        <td>@Model.Best_Distance</td>
+    </tr>
+</table>
+
+<div style="display: block">
+    <a href="/Weapons/UpdateWeapon/@Model.Gun_Id">Update Weapon</a>
+</div>
