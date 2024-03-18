@@ -5,8 +5,14 @@ namespace CodApp
     public interface IWeaponsRepository
     {
         public IEnumerable<Weapons> GetAllWeapons ();
-        public Weapons GetWeapons (int id);
+        public Weapons GetWeapon (int id);
 
-        public void UpdateWeapons (Weapons weapons);
+        public void UpdateWeapon (Weapons weapons);
+        public void InsertWeapon(Weapons weaponsToInsert);
+       
+
+        public void DeleteWeapon(Weapons weapons);
+
+
     }
 }

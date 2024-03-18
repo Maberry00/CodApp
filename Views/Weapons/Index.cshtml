@@ -1,6 +1,11 @@
 ﻿@model IEnumerable<Weapons>
 
 <h2>Weapons</h2>
+
+<div style="display: block">
+    <a href="/Weapons/InsertWeapon/">New Weapon</a>
+</div>
+
 <table class="table">
     <tr>
         <th>GunID</th>
@@ -15,7 +20,7 @@
     @foreach (var product in @Model)
     {
         <tr>
-            <td><a href=/Weapons/ViewWeapons/@product.Gun_Id>@product.Gun_Id</a></td>
+            <td><a href=/Weapons/ViewWeapon/@product.Gun_Id>@product.Gun_Id</a></td>
             <td>@product.Name</td>
             <td>@product.Category</td>
             <td>@product.Ranking</td>

@@ -27,13 +27,13 @@ namespace CodApp.Controllers
 
         public IActionResult ViewWeapons(int id)
         {
-            var weapons = repo.GetWeapons(id);
+            var weapons = repo.GetWeapon(id);
             return View(weapons);
         }
 
         public IActionResult UpdateWeapon(int id)
         {
-            Weapons gun = repo.GetWeapons(id);
+            Weapons gun = repo.GetWeapon(id);
             if (gun == null)
             {
                 return View("WeaponNotFound");
@@ -43,10 +43,28 @@ namespace CodApp.Controllers
 
         public IActionResult UpdateWeaponToDatabase(Weapons weapons)
         {
-            repo.UpdateWeapons(weapons);
+            repo.UpdateWeapon(weapons);
 
             return RedirectToAction("ViewWeapon", new { id = weapons.Gun_Id });
         }
+
+        public IActionResult InsertWeapon (Weapons weaponsToInsert) 
+        {
+            return View(weaponsToInsert);
+        }
+
+        public IActionResult InsertWeaponToDatabase(Weapons weaponsToInsert)
+        {
+            repo.InsertWeapon(weaponsToInsert);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteWeapon(Weapons weapons)
+        {
+            repo.DeleteWeapon(weapons);
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

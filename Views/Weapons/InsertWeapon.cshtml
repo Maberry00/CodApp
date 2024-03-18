@@ -1,0 +1,16 @@
+﻿@model Weapons
+
+<h2>Create a New Weapons</h2>
+
+@using (Html.BeginForm("InsertWeaponToDatabase", "Weapons", "Post"))
+{
+    <input asp-for="Gun_Id" type="hidden" value="" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" name="Name" class="form-control" value="" />
+
+    <label asp-for="Damage" class="control-label">Damage</label>
+    <input type="number" step="1" name="Damage" class="form-control" />
+
+    <input type="submit" value="Create Weapon" class="btn btn-primary" />
+}
