@@ -25,7 +25,7 @@ namespace CodApp.Controllers
             return View(weapons);
         }
 
-        public IActionResult ViewWeapons(int id)
+        public IActionResult ViewWeapon(int id)
         {
             var weapons = repo.GetWeapon(id);
             return View(weapons);
